@@ -1,4 +1,5 @@
 package rle.huffmanencodingforjpeg;
+
 public class node {
 
     public node parent;

@@ -4,24 +4,24 @@ import java.util.*;
 public class Huffman implements Comparator<node> {
     public static HashMap<String,Integer> map = new HashMap<String,Integer>();
 
-    public static void setCode(node root){
+    public static void setCodeToTree(node root){
         if(root == null){
             return;
         }
         if(root.parent == null){
             root.left.code = "1";
             if (root.right!=null){root.right.code = "0";}
-            setCode(root.left);
-            setCode(root.right);
+            setCodeToTree(root.left);
+            setCodeToTree(root.right);
         }
         else{
             if(root.left!=null){
                 root.left.code = root.code + "1";
-                setCode(root.left);
+                setCodeToTree(root.left);
             }
             if(root.right!=null){
                 root.right.code = root.code + "0";
-                setCode(root.right);
+                setCodeToTree(root.right);
             }
         }
     }
@@ -96,7 +96,7 @@ public class Huffman implements Comparator<node> {
             root.left.parent = root;
             arr.remove(0);
         }
-        setCode(root);
+        setCodeToTree(root);
         for(int i=0;i<s.size();i++) {
             String c = s.get(i);
             getCode(root, c);

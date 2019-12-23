@@ -7,12 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class RLEHuffmanEncodingForJPEG {
     
-    public static HashMap<String,String> huffmanTable = new HashMap<>();     //Huffman Table 
+    public HashMap<String,String> huffmanTable = new HashMap<>();     //Huffman Table 
     public static ArrayList<String> nonZeros = new ArrayList<>();           //Non zero nummers
     
     public String Encode(String in){
